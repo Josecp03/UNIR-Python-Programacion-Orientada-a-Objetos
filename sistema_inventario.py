@@ -1,6 +1,5 @@
 class Producto:
     def __init__(self, nombre, precio, cantidad):
-        # Validaciones básicas en el constructor
         if not nombre or nombre.strip() == "":
             raise ValueError("El nombre del producto no puede estar vacío")
         if precio < 0:
@@ -62,9 +61,7 @@ class Inventario:
         print(f"\nTotal de productos: {len(self.productos)}")
 
 
-def menu_principal():
-    inventario = Inventario()
-    
+def menu_principal(inventario):
     salir = False
     while not salir:
         print("\n--- SISTEMA DE INVENTARIO ---")
@@ -125,4 +122,5 @@ def menu_principal():
 
 
 if __name__ == "__main__":
-    menu_principal()
+    inventario = Inventario()
+    menu_principal(inventario)
